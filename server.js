@@ -19,6 +19,52 @@ app.get("/", (req, res) => {
       port: String(PORT),
       logLevel: LOG_LEVEL
     }
+ // AIS Blueprint API endpoint (v0.1 – Mobile Welding)
+app.post("/api/ais-blueprint", (req, res) => {
+  const { businessDescription } = req.body || {};
+
+  if (!businessDescription) {
+    return res
+      .status(400)
+      .json({ error: "businessDescription is required" });
+  }
+
+  // Static Mobile Welding AIS Blueprint (v0.1)
+  const blueprint = {
+    business: {
+      id: "mobile-welding",
+      name: "Mobile Welding",
+      description:
+        "On-site welding services for residential, commercial, and industrial clients.",
+      industry: "Field Services",
+      version: "ais-blueprint-v0.1"
+    },
+    divisions: [
+      {
+        id: "ops",
+        label: "Operations",
+        engines: ["dispatch", "scheduling", "job-docs", "equipment-tracking"]
+      },
+      {
+        id: "growth",
+        label: "Growth",
+        engines: ["lead-intake", "quotes", "reputation"]
+      },
+      {
+        id: "finance",
+        label: "Finance",
+        engines: ["invoicing", "payments", "profit-tracking"]
+      }
+    ],
+    engines: [],
+    modules: [],
+    agents: []
+  };
+
+  return res.status(200).json(blueprint);
+});
+
+  
   });
 });
 
