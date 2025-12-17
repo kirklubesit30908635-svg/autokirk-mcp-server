@@ -8,8 +8,11 @@ const LOG_LEVEL = process.env.LOG_LEVEL || "dev";
 app.use(cors());
 app.use(express.json());
 
-// Root health endpoint
-app.get("/", (req, res) => {
+// Render health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+ 
   res.json({
     status: "ok",
     service: "Autokirk MCP Server",
