@@ -21,7 +21,6 @@ app.get("/", (req, res) => {
       logLevel: LOG_LEVEL,
     },
   });
-});
 
 // Render health check endpoint
 app.get("/health", (req, res) => {
