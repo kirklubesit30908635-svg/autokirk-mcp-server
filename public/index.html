@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Autokirk — AI Systems for Auto Dealers</title>
+    <meta name="description" content="Autokirk builds AI systems that help independent dealers move faster: listings, lead follow-up, SOPs, and operational blueprints." />
+    <style>
+      :root { color-scheme: dark; }
+      body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+             background: radial-gradient(1200px 800px at 20% 10%, rgba(255,215,0,.10), transparent 60%),
+                        radial-gradient(1200px 800px at 80% 30%, rgba(0,153,255,.10), transparent 60%),
+                        #0b0f14;
+             color:#e9eef5; }
+      .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
+      .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px; }
+      .logo { width:34px; height:34px; border-radius:10px; background:
+              linear-gradient(135deg, rgba(255,215,0,.9), rgba(255,215,0,.2));
+              box-shadow: 0 10px 30px rgba(255,215,0,.12); }
+      .pill { display:flex; gap:10px; align-items:center; font-size:13px; color:#b9c6d6; }
+      .pill span { padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background: rgba(255,255,255,.04); }
+      .hero { margin-top: 54px; display:grid; grid-template-columns: 1.1fr .9fr; gap: 26px; align-items:center; }
+      @media (max-width: 900px){ .hero{ grid-template-columns: 1fr; } }
+      h1 { font-size: clamp(34px, 4vw, 54px); line-height:1.05; margin: 0 0 14px; }
+      .sub { font-size: 16px; line-height:1.6; color:#b9c6d6; margin:0 0 22px; }
+      .cta { display:flex; gap:12px; flex-wrap:wrap; }
+      .btn { appearance:none; border:none; cursor:pointer; text-decoration:none;
+             padding: 12px 16px; border-radius: 14px; font-weight: 700; font-size: 14px; }
+      .btn.primary { background: linear-gradient(135deg, rgba(255,215,0,.95), rgba(255,215,0,.55));
+                     color:#151a21; box-shadow: 0 14px 40px rgba(255,215,0,.18); }
+      .btn.ghost { background: rgba(255,255,255,.06); color:#e9eef5; border: 1px solid rgba(255,255,255,.14); }
+      .card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10);
+              border-radius: 22px; padding: 18px; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+      .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
+      @media (max-width: 520px){ .grid{ grid-template-columns: 1fr; } }
+      .feat { padding: 14px; border-radius: 18px; background: rgba(0,0,0,.22); border:1px solid rgba(255,255,255,.08); }
+      .feat b { display:block; margin-bottom:6px; }
+      .muted { color:#b9c6d6; font-size: 13px; line-height: 1.5; }
+      .foot { margin-top: 52px; color:#8ea0b6; font-size: 12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+      code { background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 8px; border:1px solid rgba(255,255,255,.10); }
+      a { color: inherit; }
+      input { width:100%; padding: 12px 12px; border-radius: 14px; border:1px solid rgba(255,255,255,.14);
+              background: rgba(255,255,255,.05); color:#e9eef5; outline:none; }
+      .row { display:flex; gap:10px; margin-top: 10px; }
+      .row button { white-space:nowrap; }
+      .ok { display:none; margin-top:10px; color:#9be39b; font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>Autokirk</div>
+        </div>
+        <div class="pill">
+          <span>AI Systems for Dealers</span>
+          <span>Blueprints • SOPs • Lead Ops</span>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div>
+          <h1>Turn your dealership into a repeatable machine.</h1>
+          <p class="sub">
+            Autokirk builds practical AI systems for independent dealers—so you can move faster,
+            follow up cleaner, and operate with consistency.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#get-access">Get early access</a>
+            <a class="btn ghost" href="/api/ais-blueprint">Try AIS Blueprint API</a>
+            <a class="btn ghost" href="/mcp/generate-ais-blueprint">MCP endpoint</a>
+          </div>
+          <p class="muted" style="margin-top:14px;">
+            Live service status at <code>/health</code>.
+          </p>
+        </div>
+
+        <div class="card">
+          <b>What Autokirk does</b>
+          <div class="grid">
+            <div class="feat">
+              <b>AI Blueprint</b>
+              <div class="muted">Generate an AIS-style business blueprint from a plain description.</div>
+            </div>
+            <div class="feat">
+              <b>Dealer Ops</b>
+              <div class="muted">SOPs, checklists, and process automation that stick.</div>
+            </div>
+            <div class="feat">
+              <b>Lead Follow-up</b>
+              <div class="muted">Faster responses, better routing, tighter pipeline discipline.</div>
+            </div>
+            <div class="feat">
+              <b>Listings & Workflow</b>
+              <div class="muted">Support for repeatable listing quality and inventory flow.</div>
+            </div>
+          </div>
+
+          <div id="get-access" style="margin-top:16px;">
+            <b>Get early access</b>
+            <div class="muted">Drop your email—I'll send the pilot details.</div>
+            <div class="row">
+              <input id="email" type="email" placeholder="you@domain.com" />
+              <button class="btn primary" id="submit">Notify me</button>
+            </div>
+            <div class="ok" id="ok">✅ Got it — you’re on the list.</div>
+            <div class="muted" style="margin-top:10px;">
+              (If you want this to actually collect emails, tell me where you want them delivered—Gmail, a Sheet, Mailchimp, etc.)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <div>© <span id="y"></span> Autokirk</div>
+        <div class="muted">Built by Kirk Digital Holdings</div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+      document.getElementById("submit").addEventListener("click", () => {
+        const v = (document.getElementById("email").value || "").trim();
+        if (!v || !v.includes("@")) return alert("Enter a valid email.");
+        // Placeholder: hook this to your backend when ready
+        document.getElementById("ok").style.display = "block";
+      });
+    </script>
+  </body>
+</html>
