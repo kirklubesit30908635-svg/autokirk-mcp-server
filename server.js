@@ -8,11 +8,26 @@ const LOG_LEVEL = process.env.LOG_LEVEL || "dev";
 app.use(cors());
 app.use(express.json());
 
+// Root info endpoint
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    service: "Autokirk MCP Server",
+    message:
+      "Deployment successful. MCP online. AIS blueprint endpoints at /mcp/generate-ais-blueprint and /api/ais-blueprint.",
+    env: {
+      node: process.version,
+      port: String(PORT),
+      logLevel: LOG_LEVEL,
+    },
+  });
+});
+
 // Render health check endpoint
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });
 });
- 
+
   res.json({
     status: "ok",
     service: "Autokirk MCP Server",
